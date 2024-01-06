@@ -3,21 +3,31 @@
 using namespace std;
 
 
-#ifndef STRUCT_DEFINITION_H
-#define STRUCT_DEFINITION_H
-
-struct TRAN;
 
 
-struct TRAN 
-{
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
+// Define the structure for a node in the linked list
+struct TRAN {
     string type;
-    double amount;
-
-    
-    TRAN(string str, double d) : type(str), amount(d) {}
-
-    void display();
+    double value;
+    TRAN* next;
 };
 
-#endif 
+static TRAN* head = new TRAN;
+static string answer;
+static string typeOfTran;
+static double amount;
+static bool makeATransaction = true;
+
+// Function declarations
+TRAN* createNode(double value);
+void insertNode(TRAN*& head, double value);
+void displayList(TRAN* head);
+void deleteList(TRAN*& head);
+void makeTransaction(TRAN* , string , string , double , bool);
+
+
+
+#endif
