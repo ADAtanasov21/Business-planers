@@ -128,9 +128,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Source\login.cpp" />
     <ClCompile Include="Source\transactions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header Files\login.h" />
     <ClInclude Include="Header Files\main.h" />
     <ClInclude Include="Header Files\transactions.h" />
   </ItemGroup>
