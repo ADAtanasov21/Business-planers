@@ -1,7 +1,7 @@
 <hr>
 
 # 📖 About the game 
-<p> </p>
+<p>Our team decided to make an application where the subject of a digital will will be digital assets(crypto, stocks, property rights) using blockchain!</p>
 
 # 📥 Installation
 <p><i>These instructions will help you copy and run our project.</i></p>
@@ -17,7 +17,7 @@ Git
 <p>1. Clone the repo</p>
 
 ```
-https://github.com/ADAtanasov21/Walter.git
+https://github.com/ADAtanasov21/Business-planers.git
 ```
 <p>2. Open the .sln file</p>
 <p>3. Run the project!</p>
