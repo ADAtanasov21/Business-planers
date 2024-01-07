@@ -1,3 +1,7 @@
+<p align = "center">
+  <img src="Business-planers/blob/main/Logo/logo.png" width="1047" text-align="center">
+</p>
+
 <hr>
 
 # 📖 About the game 
