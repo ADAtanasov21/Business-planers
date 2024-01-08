@@ -1,3 +1,4 @@
+
 #include "../Header Files/transactions.h"
 TRAN* createNode(double value) {
     TRAN* newNode = new TRAN;
@@ -22,11 +23,14 @@ void insertNode(TRAN*& head, double value) {
     }
 }
 
-void displayList(TRAN* head)
-{
-}
-
 // Display the elements of the linked list
+void displayList(TRAN* head) {
+    TRAN* temp = head;
+    while (temp != nullptr) {
+        cout << "Transaction Type: " << temp->type << ", Value: " << temp->value << endl;
+        temp = temp->next;
+    }
+}
 
 
 // Delete the entire linked list
