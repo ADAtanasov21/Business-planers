@@ -1,5 +1,5 @@
-
 #include "../Header Files/transactions.h"
+
 TRAN* createNode(double value) {
     TRAN* newNode = new TRAN;
     newNode->value = value;
@@ -54,6 +54,7 @@ void deleteList(TRAN*& head) {
 
 void makeTransaction(TRAN* head, string answer, string typeOfTran, double amount, bool makeATransaction)
 {
+    string transactions[4] = {"Bitcoin", "Etherium", "Rights", "Stocks"};
     cout << "Do you want to make a new transaction? (Y/N)" << endl;
     getline(cin, answer);
 
@@ -68,13 +69,48 @@ void makeTransaction(TRAN* head, string answer, string typeOfTran, double amount
     }
     if (makeATransaction)
     {
-        cout << "What type of transaction do you want to make?" << endl;
+        cout << "What type of transaction do you want to make? Our bank supports there four types: Bitcoin, Etherium, Rights and Stocks" << endl;
         getline(cin, typeOfTran);
-        cout << "How big would you like the transaction to be?" << endl;
-        cin >> amount;
-        TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
-        head = a;
-        cout << "Type of transaction: " << a->type << " amount of transaction: " << a->value << endl;
+
+        if (typeOfTran == "Bitcoin" || typeOfTran == "BTC" || typeOfTran == "bitcoin" || typeOfTran == "BITCOIN" || typeOfTran == "btc")
+        {
+            cout << "How big would you like the transaction to be?" << endl;
+            cin >> amount;
+            TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
+            head = a;
+            cout << "Type of transaction: " << a->type << " amount of transaction: " << a->value << endl;
+        }
+        else if (typeOfTran == "Etherium" || typeOfTran == "ETH" || typeOfTran == "etherium" || typeOfTran == "ETHERIUM" || typeOfTran == "eth")
+        {
+            cout << "How big would you like the transaction to be?" << endl;
+            cin >> amount;
+            TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
+            head = a;
+            cout << "Type of transaction: " << a->type << " amount of transaction: " << a->value << endl;
+        }
+        else if (typeOfTran == "Rights" || typeOfTran == "rights" || typeOfTran == "RIGHTS")
+        {
+            cout << "How big would you like the transaction to be?" << endl;
+            cin >> amount;
+            TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
+            head = a;
+            cout << "Type of transaction: " << a->type << " amount of transaction: " << a->value << endl;
+        }
+        else if (typeOfTran == "Stocks" || typeOfTran == "stocks" || typeOfTran == "STOCKS")
+        {
+            cout << "How big would you like the transaction to be?" << endl;
+            cin >> amount;
+            TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
+            head = a;
+            cout << "Type of transaction: " << a->type << " amount of transaction: " << a->value << endl;
+        }
+        else
+        {
+            cout << "Our bank doesn't support this type of transaction" << endl;
+        }
+
+        
+        
     }
 }
 

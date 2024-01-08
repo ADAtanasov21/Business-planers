@@ -27,11 +27,11 @@ void login(string username, string password, string passwordVer, bool haveAcount
         else
         {
             cout << "Passwords don't match! Try again!" << endl;
-            string passwords[5];
+            string passwordTries[5];
             for (int i = 0; i < 5; i++)
             {
-                cin >> passwords[i];
-                if (passwords[i] == password)
+                cin >> passwordTries[i];
+                if (passwordTries[i] == password)
                 {
                     cout << "Acount created succesfully! Welcome!" << endl;
                     break;
@@ -42,14 +42,26 @@ void login(string username, string password, string passwordVer, bool haveAcount
                     cout << "You have " << 5 - i - 1 << " more tries" << endl;
                 }
             }
-        }       
+        }
+        ofstream loginFile("data.csv");
+        if (loginFile.is_open()) {
+            // Write the variables to the file in CSV format
+            loginFile << "Username, Passowrd" << endl; // Column headers
+            loginFile << username << "," << password <<  ", " << passwordVer << endl;
+
+            // Close the file
+            
+        }
+        
     }
 }
         
     
        
-        
-        
+void sendToEcxcel(string username, string passowd)
+{
     
     
-        
+
+
+}

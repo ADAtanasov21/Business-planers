@@ -1,7 +1,6 @@
 #include "Header Files/main.h"
 
 
-
 int main() 
 {
     //TRAN* head = nullptr;
@@ -17,7 +16,8 @@ int main()
 
     //// Delete the linked list
     ////deleteList(head);
-    //makeTransaction( head, answer, typeOfTran, amount, makeATransaction);
-    login(username, password, passwordVer, haveAcount, loginOrSignup);
+    makeTransaction( head, answer, typeOfTran, amount, makeATransaction);
+    //login(username, password, passwordVer, haveAcount, loginOrSignup);
+
     return 0;
 }
