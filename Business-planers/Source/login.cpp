@@ -14,7 +14,7 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         cout << "Enter your password: ";
         cin >> password;
         system("cls");
-        cout << "Welcome back!" << username << " What do you want to do?";
+        cout << "Welcome back! " << username << endl;
     }
     else if (loginOrSignup == '2')
     {
@@ -36,8 +36,7 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         {
             system("cls");
             cout << "Passwords don't match! Try again!" << endl;
-            sleep(5);
-            system("cls");
+            
             string passwordTries[5];
             for (int i = 0; i < 5; i++)
             {
@@ -47,23 +46,19 @@ void login(string username, string password, string passwordVer, bool haveAccoun
                 if (passwordTries[i] == password)
                 {
                     cout << "Account created successfully! Welcome!" << endl;
-                    sleep(5);
-                    system("cls");
                     break;
                 }
                 else
                 {
                     cout << "Passwords don't match! Try again!" << endl;
-                    cout << "You have " << 5 - i - 1 << " more tries";
-                    sleep(5);
-                    system("cls");
+                    cout << "You have " << 5 - i - 1 << " more tries" << endl;
                 }
             }
         }
         ofstream loginFile("data.csv");
         if (loginFile.is_open()) {
             // Write the variables to the file in CSV format
-            loginFile << "Username, Passowrd" << endl; // Column headers
+            loginFile << "Username, Password" << endl; // Column headers
             loginFile << username << "," << password <<  ", " << passwordVer << endl;
 
             // Close the file

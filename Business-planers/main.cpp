@@ -16,8 +16,8 @@ int main()
 
     //// Delete the linked list
     ////deleteList(head);
+    login(username, password, passwordVer, haveAccount, loginOrSignup);
     makeTransaction( head, answer, typeOfTran, amount, makeATransaction);
-    //login(username, password, passwordVer, haveAcount, loginOrSignup);
 
     return 0;
 }

@@ -56,7 +56,7 @@ void deleteList(TRAN*& head) {
 
 void makeTransaction(TRAN* head, string answer, string typeOfTran, double amount, bool makeATransaction)
 {
-	string transactions[4] = { "Bitcoin", "Etherium", "Rights", "Stocks" };
+	string transactions[4] = { "Bitcoin", "Ethereum", "Rights", "Stocks" };
 	cout << "Do you want to make a new transaction? (Y/N)" << endl;
 	getline(cin, answer);
 
@@ -68,11 +68,10 @@ void makeTransaction(TRAN* head, string answer, string typeOfTran, double amount
 	{
 		makeATransaction = false;
 		cout << "If you have lost your password or if you want to give a will to somebody please let me know?" << endl;
-		exit(0);
 	}
 	else
 	{
-		cout << "What type of transaction do you want to make? Our bank supports there four types: Bitcoin, Etherium, Rights and Stocks" << endl;
+		cout << "What type of transaction do you want to make? Our bank supports there four types: Bitcoin, Ethereum, Rights and Stocks" << endl;
 		getline(cin, typeOfTran);
 
 		// Lower the case of typeOfTran
@@ -85,15 +84,15 @@ void makeTransaction(TRAN* head, string answer, string typeOfTran, double amount
 			cin >> amount;
 			TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
 			head = a;
-			cout << "Type of transaction: " << a->type << " amount of transaction: " << a->value << endl;
+			cout << "Type of transaction: " << a->type << endl << "Amount of transaction: " << a->value << endl;
 		}
-		else if (typeOfTran == "etherium" || typeOfTran == "eth")
+		else if (typeOfTran == "Ethereum" || typeOfTran == "eth")
 		{
 			cout << "How big would you like the transaction to be?" << endl;
 			cin >> amount;
 			TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
 			head = a;
-			cout << "Type of transaction: " << a->type << " amount of transaction: " << a->value << endl;
+			cout << "Type of transaction: " << a->type << endl <<"Amount of transaction: " << a->value << endl;
 		}
 		else if (typeOfTran == "rights")
 		{
@@ -101,7 +100,7 @@ void makeTransaction(TRAN* head, string answer, string typeOfTran, double amount
 			cin >> amount;
 			TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
 			head = a;
-			cout << "Type of transaction: " << a->type << " amount of transaction: " << a->value << endl;
+			cout << "Type of transaction: " << a->type << endl << "Amount of transaction: " << a->value << endl;
 		}
 		else if (typeOfTran == "stocks")
 		{
