@@ -1,6 +1,9 @@
 <p align = "center">
   <img src="Logo/proektna.png" text-align="center">
 </p>
+
+<hr>
+
 <p align = "center">
   <img src="Logo/logo.png" width="1040" text-align="center">
 </p>
