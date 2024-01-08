@@ -1,10 +1,13 @@
 <p align = "center">
-  <img src="Logo/logo.png" width="1047" text-align="center">
+  <img src="Logo/proekt.png" width="1040" text-align="center">
+</p>
+<p align = "center">
+  <img src="Logo/logo.png" width="1040" text-align="center">
 </p>
 
 <hr>
 
-# 📖 About the game 
+# 📖 About the application 
 <p>Our team decided to make an application where the subject of a digital will will be digital assets(crypto, stocks, property rights) using blockchain!</p>
 
 # 📥 Installation
