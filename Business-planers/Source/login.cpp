@@ -1,9 +1,9 @@
 #include "../Header Files/login.h"
 
-void login(string username, string password, string passwordVer, bool haveAcount, char loginOrSignup)
+void login(string username, string password, string passwordVer, bool haveaccount, char loginOrSignup)
 {
     string temp = " ";
-    cout << "1. LOGIN" << endl << "2. SIGNUP" << endl << "Press one if you want to log in to an exsisting acount or press two if you want to create an acount" << endl;
+    cout << "1. LOGIN" << endl << "2. SIGNUP" << endl << "Press one if you want to log in to an exsisting account or press two if you want to create an account" << endl;
     cin >> loginOrSignup;
     if (loginOrSignup == '1')
     {
@@ -23,7 +23,7 @@ void login(string username, string password, string passwordVer, bool haveAcount
         cout << "Confirm your password: ";
         cin >> passwordVer;
         if (password == passwordVer)
-            cout << "Acount created succesfully! Welcome!" << endl;
+            cout << "Account created succesfully! Welcome!" << endl;
         else
         {
             cout << "Passwords don't match! Try again!" << endl;
@@ -33,7 +33,7 @@ void login(string username, string password, string passwordVer, bool haveAcount
                 cin >> passwordTries[i];
                 if (passwordTries[i] == password)
                 {
-                    cout << "Acount created succesfully! Welcome!" << endl;
+                    cout << "Account created succesfully! Welcome!" << endl;
                     break;
                 }
                 else
