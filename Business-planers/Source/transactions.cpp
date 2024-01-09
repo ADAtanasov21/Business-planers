@@ -54,70 +54,60 @@ void deleteList(TRAN*& head) {
 
 
 
-void makeTransaction(TRAN* head, string answer, string typeOfTran, double amount, bool makeATransaction)
+void assets(TRAN* btc, TRAN* eth, TRAN* rights, TRAN* stocks, bool makeATransaction, string answer, string typeOfTran)
 {
-	string transactions[4] = { "Bitcoin", "Ethereum", "Rights", "Stocks" };
-	cout << "Do you want to make a new transaction? (Y/N)" << endl;
-	getline(cin, answer);
-
-	for (char& c : answer) {
-		c = std::tolower(c);
-	}
-
-	if ((answer == "n" || answer == "no"))
+	double btcAdd = 0;
+	double ethAdd = 0;
+	double rightsAdd = 0;
+	double stocksAdd = 0;
+	cout << "Do you want to make a transaction? It could be outgoing or incoming." << endl << "Use a negative number for an outgoing and a positive one for an incoming transaction" << endl;
+	while (makeATransaction == true)
 	{
-		makeATransaction = false;
-		cout << "If you have lost your password or if you want to give a will to somebody please let me know?" << endl;
-	}
-	else
-	{
-		cout << "What type of transaction do you want to make? Our bank supports there four types: Bitcoin, Ethereum, Rights and Stocks" << endl;
-		getline(cin, typeOfTran);
 
-		// Lower the case of typeOfTran
-		for (char& c : typeOfTran)
-			c = std::tolower(c);
-
-		if (typeOfTran == "bitcoin" || typeOfTran == "btc")
+		cin >> answer;
+		if (answer == "Yes" || answer == "yes" || answer == "YES" || answer == "Y")
 		{
-			cout << "How big would you like the transaction to be?" << endl;
-			cin >> amount;
-			TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
-			head = a;
-			cout << "Type of transaction: " << a->type << endl << "Amount of transaction: " << a->value << endl;
+			cout << "Our bank supports these types of assets Bitcoint(1), Ethereum(2), Rights(3), Stocks(4)" << endl;
+			cout << "In which of these do you want add funds to? Choose the coresponding number." << endl;
+			cin >> typeOfTran;
+			if (typeOfTran == "1")
+			{
+				cout << "How much would you like to add to this asset?" << endl;
+				cin >> btcAdd;
+				btc->value += btcAdd;
+				cout << "You now have " << btc->value << " in " << btc->type << endl;
+			}
+			else if (typeOfTran == "2")
+			{
+				cout << "How much would you like to add to this asset?" << endl;
+				cin >> ethAdd;
+				eth->value += ethAdd;
+				cout << "You now have " << eth->value << " in " << eth->type << endl;
+			}
+			else if (typeOfTran == "3")
+			{
+				cout << "How much would you like to add to this asset?" << endl;
+				cin >> rightsAdd;
+				rights->value += rightsAdd;
+				cout << "You now have " << rights->value << " in " << rights->type << endl;
+			}
+			else if (typeOfTran == "4")
+			{
+				cout << "How much would you like to add to this asset?" << endl;
+				cin >> stocksAdd;
+				stocks->value += stocksAdd;
+				cout << "You now have " << stocks->value << " in " << stocks->type << endl;
+			}
+			else
+			{
+				cout << "Our bank doesn't support this type of asset" << endl;
+			}
+			assets(btc, eth, rights, stocks, makeATransaction, answer, typeOfTran);
 		}
-		else if (typeOfTran == "Ethereum" || typeOfTran == "eth")
+		else if (answer == "N" || answer == "NO" || answer == "no" || answer == "No")
 		{
-			cout << "How big would you like the transaction to be?" << endl;
-			cin >> amount;
-			TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
-			head = a;
-			cout << "Type of transaction: " << a->type << endl <<"Amount of transaction: " << a->value << endl;
+			makeATransaction = false; break;
 		}
-		else if (typeOfTran == "rights")
-		{
-			cout << "How big would you like the transaction to be?" << endl;
-			cin >> amount;
-			TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
-			head = a;
-			cout << "Type of transaction: " << a->type << endl << "Amount of transaction: " << a->value << endl;
-		}
-		else if (typeOfTran == "stocks")
-		{
-			cout << "How big would you like the transaction to be?" << endl;
-			cin >> amount;
-			TRAN* a = new TRAN{ typeOfTran, amount, nullptr };
-			head = a;
-			cout << "Type of transaction: " << a->type << " amount of transaction: " << a->value << endl;
-		}
-		else
-		{
-			cout << "Our bank doesn't support this type of transaction" << endl;
-		}
-
-
-
 	}
 }
 
-//void makeTransaction()
