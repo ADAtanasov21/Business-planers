@@ -40,9 +40,14 @@ void login(string username, string password, string passwordVer, bool haveAccoun
             string passwordTries[5];
             for (int i = 0; i < 5; i++)
             {
+                if (i == 0) {
+                    cout << "Seems that you don't have more tries. Please remember your password and come back!";
+                }
+
                 cout << "Confirm your password: ";
                 cin >> passwordTries[i];
                 system("cls");
+                
                 if (passwordTries[i] == password)
                 {
                     cout << "Account created successfully! Welcome!" << endl;
