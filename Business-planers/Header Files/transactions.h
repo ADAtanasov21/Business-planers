@@ -9,30 +9,37 @@ using namespace std;
 #define LINKEDLIST_H
 
 // Define the structure for a node in the linked list
-struct TRAN {
+struct TRAN 
+{
     string type;
     double value;
     TRAN* next;
+
+    TRAN(string t, double v) : type(t), value(v), next(nullptr) {}
 };
 
-static TRAN* btc = new TRAN{ "Bitcoin", 0, nullptr };
-static TRAN* eth = new TRAN{ "Ethereum", 0, nullptr };
-static TRAN* rights = new TRAN{ "Rights", 0, nullptr };
-static TRAN* stocks = new TRAN{ "Stocks", 0, nullptr };
 static string answer;
 static string typeOfTran;
 static double amount;
+static double btcAdd;
+static double ethAdd;
+static double rightsAdd;
+static double stocksAdd;
+static double btc = 0;
+static double eth = 0;
+static double rights = 0;
+static double stocks = 0;
+static int numOfPeople;
 
 static bool makeATransaction = true;
 
-// Function declarations
-TRAN* createNode(double value);
-void insertNode(TRAN*& head, double value);
-void displayList(TRAN* head);
-void deleteList(TRAN*& head);
 
-void assets(TRAN*, TRAN*, TRAN*, TRAN*, bool, string, string);
-
+void addTran(TRAN*&, string, double&);
+void displayBtc(TRAN*);
+void displayEth(TRAN*);
+void displayRights(TRAN*);
+void displayStocks(TRAN*);
+void assets(bool&, string&, string&, double&, double&, double&, double&);
 
 
 #endif
