@@ -85,6 +85,7 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         if (loginFile.is_open()) {
             // Write the variables to the file in CSV format
             loginFile << "Username, Password" << endl; // Column headers
+            sendToExcel(username, password);
             loginFile << username << "," << password <<  ", " << passwordVer << endl;
 
             // Close the file
@@ -93,13 +94,15 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         
     }
 }
-        
-    
-       
-void sendToEcxcel(string username, string passowd)
+
+void sendToExcel(const std::string& username, const std::string& password)
 {
-    
-    
+    Excel::Book book;
+    Excel::Sheet* sheet = book.sheet(1);
 
+    sheet->cell("A1")->set(username);
+    sheet->cell("B1")->set(password);
 
+    book.save("example.xlsx");
 }
+
