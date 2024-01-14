@@ -146,11 +146,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Source\login.cpp" />
     <ClCompile Include="Source\transactions.cpp" />
+    <ClCompile Include="Source\user_id.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header Files\assets.h" />
     <ClInclude Include="Header Files\login.h" />
     <ClInclude Include="Header Files\main.h" />
     <ClInclude Include="Header Files\transactions.h" />
+    <ClInclude Include="Header Files\user_id.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

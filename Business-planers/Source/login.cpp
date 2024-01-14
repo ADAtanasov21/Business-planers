@@ -1,4 +1,5 @@
 ﻿#include "../Header Files/login.h"
+#include "../Header Files/user_id.h"
 
 void login(string username, string password, string passwordVer, bool haveAccount, char loginOrSignup, pqxx::connection* conn)
 {
@@ -19,14 +20,14 @@ void login(string username, string password, string passwordVer, bool haveAccoun
             // Извличане на стойности от първия намерен ред
             pqxx::result::const_iterator row = res.begin();
             int user_id = row["id"].as<int>();
+            id = user_id;
 
-            // Обработка на user_id
-            // Например, извеждане на стойността
+            std::cout << id << endl;
             std::cout << "User ID: " << user_id << std::endl;
         }
         else {
-            // Няма намерени резултати
-            std::cout << "No" << std::endl;
+
+            std::cout << "No such an acount" << std::endl;
         }
 
     }
@@ -81,6 +82,7 @@ void login(string username, string password, string passwordVer, bool haveAccoun
             }
         }
     }
+
 }
 
 

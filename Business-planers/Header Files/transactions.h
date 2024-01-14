@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-
+#include <pqxx/pqxx>
 using namespace std;
 
 
@@ -27,21 +27,19 @@ static double btcAdd;
 static double ethAdd;
 static double rightsAdd;
 static double stocksAdd;
-static double btc = 0;
-static double eth = 0;
-static double rights = 0;
-static double stocks = 0;
-static int numOfPeople;
+static int sumToHundred = 0;
+static int heirsCounter;
 
-static bool makeATransaction = true;
+
 
 
 void addTran(TRAN*&, string, double&);
-void displayBtc(TRAN*);
-void displayEth(TRAN*);
-void displayRights(TRAN*);
-void displayStocks(TRAN*);
-void assets(bool&, string&, string&, double&, double&, double&, double&);
+void displayBtc(TRAN*, double&);
+void displayEth(TRAN*, double&);
+void displayRights(TRAN*, double&);
+void displayStocks(TRAN*, double&);
+void assets( string&, string&, double&, double&, double&, double&, pqxx::connection*, double&, double&, double&, double&);
+void will( int, int, pqxx::connection* conn);
 
 
 #endif
