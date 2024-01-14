@@ -63,7 +63,12 @@ void login(string username, string password, string passwordVer, bool haveAccoun
                 cout << "Confirm your password: ";
                 cin >> passwordTries[i];
                 system("cls");
-                
+
+                if (5 - i - 1 == 0) {
+                    cout << "Your remaining tries expired. PLease come back when you remember you password!";
+                    break;
+                    exit(10000000000);
+                }
                 if (passwordTries[i] == password)
                 {
                     cout << "Account created successfully! Welcome!" << endl;
