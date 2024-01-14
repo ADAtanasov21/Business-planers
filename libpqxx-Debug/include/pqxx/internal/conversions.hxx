@@ -1160,16 +1160,18 @@ struct string_traits<std::array<T, N>>
 
 
 /// We don't know how to pass array params in binary format, so pass as text.
-template<typename T, typename... Args, Args... args>
-inline constexpr format param_format(std::array<T, args...> const &)
+template<typename T, typename... Args>
+inline constexpr format param_format(std::array<T, sizeof...(Args)> const &)
 {
   return format::text;
 }
 
 
+
 /// An array of `std::byte` is a binary string.
-template<typename... Args, Args... args>
-inline constexpr format param_format(std::array<std::byte, args...> const &)
+template<typename... Args>
+inline constexpr format
+param_format(std::array<std::byte, sizeof...(Args)> const &)
 {
   return format::binary;
 }

@@ -1,20 +1,34 @@
-#include "../Header Files/login.h"
+﻿#include "../Header Files/login.h"
 
-void login(string username, string password, string passwordVer, bool haveAccount, char loginOrSignup)
+void login(string username, string password, string passwordVer, bool haveAccount, char loginOrSignup, pqxx::connection* conn)
 {
     string temp = " ";
     cout << "1. LOGIN" << endl << "2. SIGNUP" << endl << "Press one if you want to log in to an existing account or press two if you want to create an account" << endl;
     cin >> loginOrSignup;
     if (loginOrSignup == '1')
-    {
-
+    {       
+        
         cout << "Enter your username: ";
         cin >> username;
-        cout << endl;
+        cout << endl;      
         cout << "Enter your password: ";
         cin >> password;
-        system("cls");
-        cout << "Welcome back! " << username << endl;
+        pqxx::work worker(*conn);
+        pqxx::result res = worker.exec("SELECT id FROM users WHERE username = '" + username + "' AND password = '" + password + "'");
+        if (!res.empty()) {
+            // Извличане на стойности от първия намерен ред
+            pqxx::result::const_iterator row = res.begin();
+            int user_id = row["id"].as<int>();
+
+            // Обработка на user_id
+            // Например, извеждане на стойността
+            std::cout << "User ID: " << user_id << std::endl;
+        }
+        else {
+            // Няма намерени резултати
+            std::cout << "No" << std::endl;
+        }
+
     }
     else if (loginOrSignup == '2')
     {
@@ -29,7 +43,9 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         cout << endl;
         if (password == passwordVer)
         {
-            system("cls");
+            pqxx::work worker(*conn);
+            pqxx::result res = worker.exec("INSERT INTO users(username, password) VALUES('" + username + "','" + password + "')");
+            worker.commit();
             cout << "Account created successfully! Welcome!" << endl;
         }
         else
