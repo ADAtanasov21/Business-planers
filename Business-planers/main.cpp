@@ -3,6 +3,6 @@
 
 int main()
 {
-	//login(username, password, passwordVer, haveAccount, loginOrSignup);
+	login(username, password, passwordVer, haveAccount, loginOrSignup);
 	assets(makeATransaction, answer, typeOfTran, btcAdd, ethAdd, rightsAdd, stocksAdd);
 }

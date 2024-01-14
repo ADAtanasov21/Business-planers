@@ -59,9 +59,9 @@ void assets(bool& makeATransaction, string& answer, string& typeOfTran, double& 
 	while (makeATransaction)
 	{
 		std::cin >> answer;
-		if (answer == "Yes" || answer == "yes" || answer == "YES" || answer == "Y")
+		if (answer == "Yes" || answer == "yes" || answer == "YES" || answer == "Y" || answer == "y")
 		{
-			std::cout << "Our bank supports these types of assets Bitcoint(1), Ethereum(2), Rights(3), Stocks(4)" << endl;
+			std::cout << "Our bank supports these types of assets Bitcoin(1), Ethereum(2), Rights(3), Stocks(4)" << endl;
 			std::cout << "In which of these do you want to operate with? Choose the corresponding number." << endl;
 			std::cin >> typeOfTran;
 
@@ -108,7 +108,7 @@ void assets(bool& makeATransaction, string& answer, string& typeOfTran, double& 
 			assets(makeATransaction, answer, typeOfTran, btcAdd, ethAdd, rightsAdd, stocksAdd);
 			std::cout << endl;
 		}
-		else if (answer == "N" || answer == "NO" || answer == "no" || answer == "No")
+		else if (answer == "N" || answer == "NO" || answer == "no" || answer == "No" || answer == "n")
 		{
 			cout << "You have: " << endl << btc << " in Bitcoin" << endl;
 			cout << eth << " in Ethereum" << endl;

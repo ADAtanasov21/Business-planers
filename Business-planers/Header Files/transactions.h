@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <pqxx/pqxx>
 using namespace std;
 
 
