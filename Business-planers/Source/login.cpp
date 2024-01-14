@@ -1,5 +1,4 @@
 ﻿#include "../Header Files/login.h"
-#include <excel.h>
 
 void login(string username, string password, string passwordVer, bool haveAccount, char loginOrSignup, pqxx::connection* conn)
 {
@@ -57,10 +56,6 @@ void login(string username, string password, string passwordVer, bool haveAccoun
             string passwordTries[5];
             for (int i = 0; i < 5; i++)
             {
-                if (i == 0) {
-                    cout << "Seems that you don't have more tries. Please remember your password and come back!";
-                }
-
                 cout << "Confirm your password: ";
                 cin >> passwordTries[i];
                 system("cls");
@@ -72,6 +67,9 @@ void login(string username, string password, string passwordVer, bool haveAccoun
                 }
                 if (passwordTries[i] == password)
                 {
+                    pqxx::work worker(*conn);
+                    pqxx::result res = worker.exec("INSERT INTO users(username, password) VALUES('" + username + "','" + password + "')");
+                    worker.commit();
                     cout << "Account created successfully! Welcome!" << endl;
                     break;
                 }
@@ -82,28 +80,7 @@ void login(string username, string password, string passwordVer, bool haveAccoun
                 }
             }
         }
-        ofstream loginFile("data.csv");
-        if (loginFile.is_open()) {
-            // Write the variables to the file in CSV format
-            loginFile << "Username, Password" << endl; // Column headers
-            sendToExcel(username, password);
-            loginFile << username << "," << password <<  ", " << passwordVer << endl;
-
-            // Close the file
-            
-        }
-        
     }
 }
 
-void sendToExcel(const std::string& username, const std::string& password)
-{
-    Excel::Book MySheet;
-    Excel::Sheet* sheet = MySheet.sheet(1);
-
-    sheet->cell("A1")->set(username);
-    sheet->cell("B1")->set(password);
-
-    MySheet.save("Bank account transactions.xlsx");
-}
 
