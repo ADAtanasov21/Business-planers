@@ -1,1 +1,19 @@
-﻿  Business-planers.vcxproj -> C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\x64\Debug\Business-planers.exe
+﻿  main.cpp
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\main.cpp(9,69): error C2065: 'conn': undeclared identifier
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\main.cpp(12,7): error C2065: 'conn': undeclared identifier
+  login.cpp
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(70,26): warning C4305: 'argument': truncation from '__int64' to 'int'
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(70,26): warning C4309: 'argument': truncation of constant value
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(88,13): error C3861: 'sendToExcel': identifier not found
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(100,5): error C2653: 'Excel': is not a class or namespace name
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(100,12): error C2065: 'Book': undeclared identifier
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(100,17): error C2146: syntax error: missing ';' before identifier 'book'
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(100,17): error C2065: 'book': undeclared identifier
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(101,5): error C2653: 'Excel': is not a class or namespace name
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(101,12): error C2065: 'Sheet': undeclared identifier
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(101,19): error C2065: 'sheet': undeclared identifier
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(101,27): error C2065: 'book': undeclared identifier
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(103,5): error C2065: 'sheet': undeclared identifier
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(104,5): error C2065: 'sheet': undeclared identifier
+C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\Source\login.cpp(106,5): error C2065: 'book': undeclared identifier
+  Generating Code...

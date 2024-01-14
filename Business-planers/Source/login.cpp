@@ -1,4 +1,5 @@
 ﻿#include "../Header Files/login.h"
+#include <excel.h>
 
 void login(string username, string password, string passwordVer, bool haveAccount, char loginOrSignup, pqxx::connection* conn)
 {
@@ -97,12 +98,12 @@ void login(string username, string password, string passwordVer, bool haveAccoun
 
 void sendToExcel(const std::string& username, const std::string& password)
 {
-    Excel::Book book;
-    Excel::Sheet* sheet = book.sheet(1);
+    Excel::Book MySheet;
+    Excel::Sheet* sheet = MySheet.sheet(1);
 
     sheet->cell("A1")->set(username);
     sheet->cell("B1")->set(password);
 
-    book.save("example.xlsx");
+    MySheet.save("Bank account transactions.xlsx");
 }
 
