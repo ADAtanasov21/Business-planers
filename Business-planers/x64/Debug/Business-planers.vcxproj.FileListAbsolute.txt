@@ -4,3 +4,5 @@ C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studi
 C:\Users\Stefan\Desktop\project\Business-planers\Business-planers\x64\Debug\Business-planers.exe
 C:\Users\IVBadalov21\OneDrive - ПГКПИ - Бургас\Documents\Visual Studio 2022\Business-planers\Business-planers\Business-planers\x64\Debug\Business-planers.exe
 C:\Users\IVBadalov21\source\repos\ADAtanasov21\Business-planers\Business-planers\x64\Debug\Business-planers.exe
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\x64\Debug\Business-planers.exe
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\x64\Debug\Business-planers.vcxproj.CopyComplete

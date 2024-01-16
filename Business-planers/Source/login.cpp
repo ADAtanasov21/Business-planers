@@ -38,6 +38,17 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         cout << endl;
         cout << "Enter your password: ";
         cin >> password;
+        unsigned int len = password.length();
+        cout << len;
+        if(len < 8)
+            while (len < 8)
+            {
+                cout << "Password must be at least 8 charecters long!" << endl;
+                cout << "Enter your password again: ";
+                cin >> password;
+                unsigned int lenTest = password.length();
+                len = lenTest;
+            }
         cout << endl;
         cout << "Confirm your password: ";
         cin >> passwordVer;
