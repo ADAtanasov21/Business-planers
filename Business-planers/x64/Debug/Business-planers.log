@@ -1,8 +1,10 @@
 ﻿  login.cpp
-C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(41,45): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(49,57): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(78,37): warning C4305: 'argument': truncation from '__int64' to 'int'
-C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(78,26): warning C4309: 'argument': truncation of constant value
-  Business-planers.vcxproj -> C:\Users\Admin\Source\Repos\Business-planers(1)\x64\Debug\Business-planers.exe
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(38,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(45,57): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(51,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(58,57): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(87,37): warning C4305: 'argument': truncation from '__int64' to 'int'
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(87,26): warning C4309: 'argument': truncation of constant value
+  Business-planers.vcxproj -> C:\Users\Admin\source\repos\Business-planers(1)\x64\Debug\Business-planers.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
