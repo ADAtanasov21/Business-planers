@@ -135,13 +135,21 @@ void assets( string& answer, string& typeOfTran, double& btcAdd, double& ethAdd,
 			worker.commit();
 			return;
 		}
+		else
+		{
+			cout << "You should type yes or no" << endl;
+			assets(answer, typeOfTran, btcAdd, ethAdd, rightsAdd, stocksAdd, conn, btc, eth, rights, stocks);
+
+		}
+		//cout << endl << "At our bank, your heirs inherit your will, distributing it in percentages determined by you" << endl << endl;
 }
+
 
 
 void will(int sumToHundred, int heirsCounter, pqxx::connection* conn)
 {
-	double percentages[10];
-	cout << endl << "At our bank, your heirs inherit your will, distributing it in percentages determined by you" << endl;
+	double percentages[20];
+	
 	cout << "How many heirs will you have" << endl;
 	cin >> heirsCounter;
 	for (int i = 0; i < heirsCounter; i++)
@@ -150,18 +158,27 @@ void will(int sumToHundred, int heirsCounter, pqxx::connection* conn)
 		cin >> percentages[i];
 		sumToHundred += percentages[i];
 	}
-	pqxx::work worker(*conn);
-	pqxx::result res = worker.exec("SELECT btc, eth, stocks, rights FROM assets WHERE user_id = " + to_string(id));
-
-	pqxx::result::const_iterator row = res.begin();
-	double btc = row["btc"].as<double>();
-	double eth = row["eth"].as<double>();
-	double stocks = row["stocks"].as<double>();
-	double rights = row["rights"].as<double>();
-
-	for (int i = 0; i < heirsCounter; i++)
+	if (sumToHundred != 100)
 	{
-		cout << "Heir " << i + 1 << " is going to receive " << float((percentages[i] / sumToHundred)) * (btc + eth + rights + stocks) << endl;
+		cout << "You didn't distribute your will among your heirs. The sum of the percentages must be exactly 100! Try enterin them again." << endl;
+		sumToHundred = 0;
+		will(sumToHundred, heirsCounter, conn);
+	}
+	else
+	{
+		pqxx::work worker(*conn);
+		pqxx::result res = worker.exec("SELECT btc, eth, stocks, rights FROM assets WHERE user_id = " + to_string(id));
 
+		pqxx::result::const_iterator row = res.begin();
+		double btc = row["btc"].as<double>();
+		double eth = row["eth"].as<double>();
+		double stocks = row["stocks"].as<double>();
+		double rights = row["rights"].as<double>();
+
+		for (int i = 0; i < heirsCounter; i++)
+		{
+			cout << "Heir " << i + 1 << " is going to receive " << float((percentages[i] / sumToHundred)) * (btc + eth + rights + stocks) << endl;
+
+		}
 	}
 }

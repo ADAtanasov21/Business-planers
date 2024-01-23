@@ -35,11 +35,11 @@ void login(string username, string password, string passwordVer, bool haveAccoun
     {
         cout << "Enter your username: ";
         cin >> username;
-        unsigned int lenUser = password.length();
-        if (lenUser < 4)
-            while (lenUser < 4)
+        unsigned int lenUser = username.length();
+        if (lenUser < 6)
+            while (lenUser < 6)
             {
-                cout << "Username must be at least 4 charecters long!" << endl;
+                cout << "Username must be at least 6 charecters long!" << endl;
                 cout << "Enter your username: ";
                 cin >> password;
                 unsigned int lenTest = password.length();
