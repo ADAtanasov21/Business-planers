@@ -114,7 +114,7 @@ void assets( string& answer, string& typeOfTran, double& btcAdd, double& ethAdd,
 			cout << eth << " in Ethereum" << endl;
 			cout << rights << " in Rights" << endl;
 			cout << stocks << " in Stocks" << endl;
-
+			cout << endl << "At our bank, your heirs inherit your will, distributing it in percentages determined by you" << endl << endl;
 
 			pqxx::work worker(*conn);
 			pqxx::result res = worker.exec("SELECT btc, eth, stocks, rights FROM assets WHERE user_id = " + to_string(id));
@@ -139,9 +139,7 @@ void assets( string& answer, string& typeOfTran, double& btcAdd, double& ethAdd,
 		{
 			cout << "You should type yes or no" << endl;
 			assets(answer, typeOfTran, btcAdd, ethAdd, rightsAdd, stocksAdd, conn, btc, eth, rights, stocks);
-
 		}
-		//cout << endl << "At our bank, your heirs inherit your will, distributing it in percentages determined by you" << endl << endl;
 }
 
 

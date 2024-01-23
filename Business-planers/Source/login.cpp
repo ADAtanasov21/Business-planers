@@ -16,18 +16,19 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         cin >> password;
         pqxx::work worker(*conn);
         pqxx::result res = worker.exec("SELECT id FROM users WHERE username = '" + username + "' AND password = '" + password + "'");
-        if (!res.empty()) {
-            // Извличане на стойности от първия намерен ред
+        if (!res.empty()) 
+        {
             pqxx::result::const_iterator row = res.begin();
             int user_id = row["id"].as<int>();
             id = user_id;
 
-            std::cout << id << endl;
-            std::cout << "User ID: " << user_id << std::endl;
+            
         }
-        else {
+        else 
+        {
 
             std::cout << "No such an acount" << std::endl;
+            login(username, password, passwordVer, haveAccount, loginOrSignup, conn);
         }
 
     }
