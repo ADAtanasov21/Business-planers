@@ -1,11 +1,10 @@
 ﻿  login.cpp
-C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(40,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(47,57): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(53,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
-C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(60,57): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(47,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(55,57): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(64,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(72,57): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
   transactions.cpp
-C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\transactions.cpp(60,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
-  main.cpp
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\transactions.cpp(66,32): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
   Generating Code...
   Business-planers.vcxproj -> C:\Users\Admin\source\repos\Business-planers(1)\x64\Debug\Business-planers.exe
   'pwsh.exe' is not recognized as an internal or external command,

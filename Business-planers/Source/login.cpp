@@ -1,25 +1,30 @@
 ﻿#include "../Header Files/login.h"
 #include "../Header Files/user_id.h"
 
+// Function for user login or signup
 void login(string username, string password, string passwordVer, bool haveAccount, char loginOrSignup, pqxx::connection* conn)
 {
     string temp = " ";
 
+    // Display menu options
     cout << "1. Login" << endl << "2. Signup" << endl << "0. Exit" << endl;
 
     cin >> loginOrSignup;
     if (loginOrSignup == '1')
     {
-
+        // User chose to login
         cout << "Enter your username: ";
         cin >> username;
         cout << endl;
         cout << "Enter your password: ";
         cin >> password;
+
+        // Query the database for user credentials
         pqxx::work worker(*conn);
         pqxx::result res = worker.exec("SELECT id FROM users WHERE username = '" + username + "' AND password = '" + password + "'");
         if (!res.empty())
         {
+            // Successful login
             pqxx::result::const_iterator row = res.begin();
             int user_id = row["id"].as<int>();
             id = user_id;
@@ -27,45 +32,55 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         }
         else
         {
-
-            cout << "No such an acount!" << endl << endl;
+            // Invalid login credentials
+            cout << "No such account!" << endl << endl;
             exit(0);
         }
-
     }
     else if (loginOrSignup == '2')
     {
+        // User chose to signup
         cout << "Enter your username: ";
         cin >> username;
+
+        // Check and enforce username length requirements
         unsigned int lenUser = username.length();
         if (lenUser < 6)
+        {
             while (lenUser < 6)
             {
-                cout << "Username must be at least 6 charecters long!" << endl;
+                cout << "Username must be at least 6 characters long!" << endl;
                 cout << "Enter your username: ";
                 cin >> password;
                 unsigned int lenTest = password.length();
                 lenUser = lenTest;
             }
+        }
         cout << endl;
         cout << "Enter your password: ";
         cin >> password;
+
+        // Check and enforce password length requirements
         unsigned int lenPass = password.length();
         if (lenPass < 8)
+        {
             while (lenPass < 8)
             {
-                cout << "Password must be at least 8 charecters long!" << endl;
+                cout << "Password must be at least 8 characters long!" << endl;
                 cout << "Enter your password: ";
                 cin >> password;
                 unsigned int lenTest = password.length();
                 lenPass = lenTest;
             }
+        }
         cout << endl;
         cout << "Confirm your password: ";
         cin >> passwordVer;
         cout << endl;
+
         if (password == passwordVer)
         {
+            // Passwords match, create user account
             pqxx::work worker(*conn);
             pqxx::result res = worker.exec("INSERT INTO users(username, password) VALUES('" + username + "','" + password + "')");
             worker.commit();
@@ -73,6 +88,7 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         }
         else
         {
+            // Passwords do not match, provide multiple attempts
             cout << "Password doesn't match! Try again!" << endl;
 
             string passwordTries[5];
@@ -82,11 +98,12 @@ void login(string username, string password, string passwordVer, bool haveAccoun
                 cin >> passwordTries[i];
 
                 if (5 - i - 1 == 0) {
-                    cout << "Your remaining tries expired. PLease come back when you remember you password!";
+                    cout << "Your remaining tries expired. Please come back when you remember your password!";
                     exit(0);
                 }
                 if (passwordTries[i] == password)
                 {
+                    // Successful password confirmation, create user account
                     pqxx::work worker(*conn);
                     pqxx::result res = worker.exec("INSERT INTO users(username, password) VALUES('" + username + "','" + password + "')");
                     worker.commit();
@@ -95,6 +112,7 @@ void login(string username, string password, string passwordVer, bool haveAccoun
                 }
                 else
                 {
+                    // Passwords still do not match, provide feedback and remaining attempts
                     cout << "Password doesn't match! Try again!" << endl;
                     cout << "You have " << 5 - i - 1 << " more tries" << endl;
                 }

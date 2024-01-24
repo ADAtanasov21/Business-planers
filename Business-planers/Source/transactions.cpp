@@ -1,6 +1,7 @@
 #include "../Header Files/transactions.h"
 #include "../Header Files/user_id.h"
 
+//Adding a transaction
 void addTran(TRAN*& head, string type, double& value)
 {
 	TRAN* newTran = new TRAN(type, value);
@@ -8,6 +9,7 @@ void addTran(TRAN*& head, string type, double& value)
 	head = newTran;
 }
 
+// Function to display the transactions related to Bitcoin
 void displayBtc(TRAN* head, double& btc)
 {
 	TRAN* current = head;
@@ -18,6 +20,7 @@ void displayBtc(TRAN* head, double& btc)
 	}
 }
 
+// Function to display the transactions related to Ethereum
 void displayEth(TRAN* head, double& eth)
 {
 	TRAN* current = head;
@@ -28,6 +31,7 @@ void displayEth(TRAN* head, double& eth)
 	}
 }
 
+// Function to display the transactions related to Rights
 void displayRights(TRAN* head, double& rights)
 {
 	TRAN* current = head;
@@ -38,6 +42,7 @@ void displayRights(TRAN* head, double& rights)
 	}
 }
 
+// Function to display the transactions related to Stocks
 void displayStocks(TRAN* head, double& stocks)
 {
 	TRAN* current = head;
@@ -48,6 +53,7 @@ void displayStocks(TRAN* head, double& stocks)
 	}
 }
 
+// Function to determine the distribution of digital will among heirs
 void will(int sumToHundred, int heirsCounter, pqxx::connection* conn)
 {
 	double percentages[20];
@@ -83,6 +89,7 @@ void will(int sumToHundred, int heirsCounter, pqxx::connection* conn)
 	}
 }
 
+//Function to handle asset transactions and update the database
 void assets( string& answer, string& typeOfTran, double& btcAdd, double& ethAdd, double& rightsAdd, double& stocksAdd, pqxx::connection* conn, double& btc, double& eth, double& rights, double& stocks)
 {
 	TRAN* head = nullptr;
