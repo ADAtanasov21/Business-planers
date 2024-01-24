@@ -1,17 +1,18 @@
-﻿  main.cpp
-pqxx.lib(version.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(version.obj)' or at ''; linking object as if no debug info
-pqxx.lib(strconv.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(strconv.obj)' or at ''; linking object as if no debug info
-pqxx.lib(connection.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(connection.obj)' or at ''; linking object as if no debug info
-pqxx.lib(result.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(result.obj)' or at ''; linking object as if no debug info
-pqxx.lib(field.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(field.obj)' or at ''; linking object as if no debug info
-pqxx.lib(row.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(row.obj)' or at ''; linking object as if no debug info
-pqxx.lib(transaction_base.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(transaction_base.obj)' or at ''; linking object as if no debug info
-pqxx.lib(transaction.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(transaction.obj)' or at ''; linking object as if no debug info
-pqxx.lib(except.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(except.obj)' or at ''; linking object as if no debug info
-pqxx.lib(util.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(util.obj)' or at ''; linking object as if no debug info
-pqxx.lib(encodings.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(encodings.obj)' or at ''; linking object as if no debug info
-pqxx.lib(wait.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(wait.obj)' or at ''; linking object as if no debug info
-pqxx.lib(errorhandler.obj) : warning LNK4099: PDB '' was not found with 'pqxx.lib(errorhandler.obj)' or at ''; linking object as if no debug info
+﻿  login.cpp
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(9,13): warning C4129: '|': unrecognized character escape sequence
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(9,13): warning C4129: ' ': unrecognized character escape sequence
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(10,13): warning C4129: '_': unrecognized character escape sequence
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(10,13): warning C4129: ' ': unrecognized character escape sequence
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(11,13): warning C4129: '_': unrecognized character escape sequence
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(12,13): warning C4129: ' ': unrecognized character escape sequence
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(13,13): warning C4129: '|': unrecognized character escape sequence
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(13,13): warning C4129: ' ': unrecognized character escape sequence
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(14,13): warning C4129: '_': unrecognized character escape sequence
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(15,13): warning C4129: '_': unrecognized character escape sequence
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(58,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(66,57): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(75,49): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\Admin\source\repos\Business-planers(1)\Business-planers\Source\login.cpp(83,57): warning C4267: 'initializing': conversion from 'size_t' to 'unsigned int', possible loss of data
   Business-planers.vcxproj -> C:\Users\Admin\source\repos\Business-planers(1)\x64\Debug\Business-planers.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

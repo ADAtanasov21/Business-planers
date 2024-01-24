@@ -39,7 +39,7 @@ void login(string username, string password, string passwordVer, bool haveAccoun
             pqxx::result::const_iterator row = res.begin();
             int user_id = row["id"].as<int>();
             id = user_id;
-            cout << "Welcome back!" << endl;
+            cout << "Welcome!" << endl << endl;
         }
         else
         {
@@ -95,7 +95,8 @@ void login(string username, string password, string passwordVer, bool haveAccoun
             pqxx::work worker(*conn);
             pqxx::result res = worker.exec("INSERT INTO users(username, password) VALUES('" + username + "','" + password + "')");
             worker.commit();
-            cout << "Account created successfully! Welcome!" << endl;
+            system("cls");
+            login(username, password, passwordVer, haveAccount, loginOrSignup, conn);
         }
         else
         {
@@ -119,7 +120,8 @@ void login(string username, string password, string passwordVer, bool haveAccoun
                     pqxx::result res = worker.exec("INSERT INTO users(username, password) VALUES('" + username + "','" + password + "')");
                     worker.commit();
                     cout << "Account created successfully! Welcome!" << endl;
-                    break;
+                    system("cls");
+                    login(username, password, passwordVer, haveAccount, loginOrSignup, conn);
                 }
                 else
                 {
