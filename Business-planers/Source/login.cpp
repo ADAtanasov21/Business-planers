@@ -4,31 +4,32 @@
 void login(string username, string password, string passwordVer, bool haveAccount, char loginOrSignup, pqxx::connection* conn)
 {
     string temp = " ";
-    cout << "1. LOGIN" << endl << "2. SIGNUP" << endl << "Press one if you want to log in to an existing account or press two if you want to create an account" << endl;
+
+    cout << "1. Login" << endl << "2. Signup" << endl << "0. Exit" << endl;
+
     cin >> loginOrSignup;
     if (loginOrSignup == '1')
-    {       
-        
+    {
+
         cout << "Enter your username: ";
         cin >> username;
-        cout << endl;      
+        cout << endl;
         cout << "Enter your password: ";
         cin >> password;
         pqxx::work worker(*conn);
         pqxx::result res = worker.exec("SELECT id FROM users WHERE username = '" + username + "' AND password = '" + password + "'");
-        if (!res.empty()) 
+        if (!res.empty())
         {
             pqxx::result::const_iterator row = res.begin();
             int user_id = row["id"].as<int>();
             id = user_id;
-
-            
+            cout << "Welcome back!" << endl;
         }
-        else 
+        else
         {
 
-            std::cout << "No such an acount" << std::endl;
-            login(username, password, passwordVer, haveAccount, loginOrSignup, conn);
+            cout << "No such an acount!" << endl << endl;
+            exit(0);
         }
 
     }
@@ -50,7 +51,7 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         cout << "Enter your password: ";
         cin >> password;
         unsigned int lenPass = password.length();
-        if(lenPass < 8)
+        if (lenPass < 8)
             while (lenPass < 8)
             {
                 cout << "Password must be at least 8 charecters long!" << endl;
@@ -72,20 +73,17 @@ void login(string username, string password, string passwordVer, bool haveAccoun
         }
         else
         {
-            system("cls");
-            cout << "Passwords don't match! Try again!" << endl;
-            
+            cout << "Password doesn't match! Try again!" << endl;
+
             string passwordTries[5];
             for (int i = 0; i < 5; i++)
             {
                 cout << "Confirm your password: ";
                 cin >> passwordTries[i];
-                system("cls");
 
                 if (5 - i - 1 == 0) {
                     cout << "Your remaining tries expired. PLease come back when you remember you password!";
-                    break;
-                    exit(10000000000);
+                    exit(0);
                 }
                 if (passwordTries[i] == password)
                 {
@@ -97,13 +95,12 @@ void login(string username, string password, string passwordVer, bool haveAccoun
                 }
                 else
                 {
-                    cout << "Passwords don't match! Try again!" << endl;
+                    cout << "Password doesn't match! Try again!" << endl;
                     cout << "You have " << 5 - i - 1 << " more tries" << endl;
                 }
             }
         }
     }
-
+    else if (loginOrSignup == '0')
+        exit(0);
 }
-
-
