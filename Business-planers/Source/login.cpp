@@ -4,6 +4,17 @@
 // Function for user login or signup
 void login(string username, string password, string passwordVer, bool haveAccount, char loginOrSignup, pqxx::connection* conn)
 {
+    cout << " ____          _                    " << endl;
+    cout << "| __ )_  _ ___(_)_ __  ___ ___ ___	" << endl;
+    cout << "|  _ \| | | /__| | '_ \ / _ / __/ __| " << endl;
+    cout << "| |_)| |_| \__ | | | | |  __\__ \__ \  " << endl;
+    cout << "|____/\__,_|___|_|_| |_|\___|___|___/ " << endl;
+    cout << "|  _ \ | | __ _ _ __  _ __   ___  ___  __ " << endl;
+    cout << "| |_) | |/ _` | '_  \| '_ \  / _ \ /__/ /__|" << endl;
+    cout << "|  __/| | (_| | | | | | | |  __/ |  /\__ \"" << endl;
+    cout << "|_|   |_|\__,_ |_| |_|_| |_|\___ |_|  |___/" << endl;
+    cout << endl << endl;
+
     string temp = " ";
 
     // Display menu options
