@@ -51,7 +51,7 @@ void displayStocks(TRAN* head, double& stocks)
 void will(int sumToHundred, int heirsCounter, pqxx::connection* conn)
 {
 	double percentages[20];
-	cout << "How many heirs will you have" << endl;
+	cout << "How many heirs will you have?" << endl;
 	cin >> heirsCounter;
 	for (int i = 0; i < heirsCounter; i++)
 	{
@@ -61,7 +61,7 @@ void will(int sumToHundred, int heirsCounter, pqxx::connection* conn)
 	}
 	if (sumToHundred != 100)
 	{
-		cout << "You didn't distribute your will among your heirs corectly." << endl <<  "The sum of the percentages must be exactly 100!Try entering them again." << endl;
+		cout << "You didn't distribute your will among your heirs correctly." << endl <<  "The sum of the percentages must be exactly 100!Try entering them again." << endl;
 		sumToHundred = 0;
 		will(sumToHundred, heirsCounter, conn);
 	}
